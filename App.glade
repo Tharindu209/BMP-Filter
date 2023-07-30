@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="window">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">BMP-Filter</property>
+    <property name="resizable">False</property>
+    <property name="hide-titlebar-when-maximized">True</property>
+    <property name="icon-name">video-display</property>
+    <property name="has-resize-grip">True</property>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">25</property>
+        <property name="margin-right">26</property>
+        <property name="margin-top">25</property>
+        <property name="margin-bottom">25</property>
+        <child>
+          <object class="GtkLabel" id="windowHead">
+            <property name="width-request">300</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="xpad">0</property>
+            <property name="ypad">4</property>
+            <property name="label" translatable="yes">BMP-FILTER</property>
+            <property name="selectable">True</property>
+            <property name="ellipsize">middle</property>
+            <property name="width-chars">0</property>
+            <property name="max-width-chars">0</property>
+            <attributes>
+              <attribute name="font-desc" value="Chalkboard SE weight=237 Condensed 22"/>
+              <attribute name="style" value="normal"/>
+              <attribute name="weight" value="ultrabold"/>
+              <attribute name="variant" value="normal"/>
+              <attribute name="stretch" value="extra-expanded"/>
+              <attribute name="scale" value="2"/>
+              <attribute name="foreground" value="#1a1a5f5fb4b4"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">272</property>
+            <property name="y">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelInput">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Input File</property>
+            <attributes>
+              <attribute name="style" value="normal"/>
+              <attribute name="weight" value="bold"/>
+              <attribute name="foreground" value="#2626a2a26969"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">112</property>
+            <property name="y">50</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelOutput">
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Output Flile</property>
+            <attributes>
+              <attribute name="style" value="normal"/>
+              <attribute name="weight" value="bold"/>
+              <attribute name="foreground" value="#c6c646460000"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">624</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entryout">
+            <property name="width-request">200</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">0</property>
+            <property name="max-width-chars">30</property>
+            <property name="primary-icon-stock">gtk-apply</property>
+            <property name="placeholder-text" translatable="yes">Enter Output File Name: </property>
+            <signal name="changed" handler="on_entryout_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">573</property>
+            <property name="y">118</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="ImageIn">
+            <property name="width-request">300</property>
+            <property name="height-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="icon-name">document-new</property>
+          </object>
+          <packing>
+            <property name="x">18</property>
+            <property name="y">176</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="ImageOut">
+            <property name="width-request">300</property>
+            <property name="height-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="icon-name">system-run</property>
+          </object>
+          <packing>
+            <property name="x">509</property>
+            <property name="y">176</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="RBGray">
+            <property name="label" translatable="yes">Grayscale</property>
+            <property name="width-request">100</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">True</property>
+            <signal name="group-changed" handler="Selector" swapped="no"/>
+            <signal name="toggled" handler="on_RBGray_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">375</property>
+            <property name="y">206</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="RBEdge">
+            <property name="label" translatable="yes">Edge</property>
+            <property name="width-request">100</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">RBGray</property>
+            <signal name="toggled" handler="on_RBEdge_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">375</property>
+            <property name="y">243</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="RBReflect">
+            <property name="label" translatable="yes">Blur</property>
+            <property name="width-request">100</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">RBGray</property>
+            <signal name="toggled" handler="on_RBReflect_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">375</property>
+            <property name="y">284</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRadioButton" id="RBBlur">
+            <property name="label" translatable="yes">Reflect</property>
+            <property name="name">5-</property>
+            <property name="width-request">100</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="active">True</property>
+            <property name="draw-indicator">True</property>
+            <property name="group">RBGray</property>
+            <signal name="toggled" handler="on_RBBlur_toggled" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">375</property>
+            <property name="y">323</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="buttonProcess">
+            <property name="label">gtk-execute</property>
+            <property name="width-request">100</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <signal name="clicked" handler="on_buttonProcess_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">351</property>
+            <property name="y">398</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="buttonQuit">
+            <property name="label" translatable="yes">Quit</property>
+            <property name="width-request">200</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_buttonQuit_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">302</property>
+            <property name="y">485</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entryin">
+            <property name="width-request">200</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">0</property>
+            <property name="max-width-chars">30</property>
+            <property name="primary-icon-stock">gtk-add</property>
+            <property name="placeholder-text" translatable="yes">Enter Input File Path:</property>
+            <signal name="changed" handler="on_entryin_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">71</property>
+            <property name="y">119</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
